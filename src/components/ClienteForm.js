@@ -42,7 +42,7 @@ const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const canWrite = has('INSERT') || has('UPDATE') || has('DELETE');
 
-  // Pré-preenche ao clicar em Editar na lista
+  
   useEffect(() => {
     const editData = localStorage.getItem('cliente_edit');
     if (editData) {
@@ -190,19 +190,20 @@ try {
     }
   });
 
-  // Envia pro backend
+  // envia pro backend
   await api.post('/clientes/inserir', payload);
 
   // Fecha o loading e mostra sucesso
   Swal.close();
   await Swal.fire('Sucesso!', 'Cliente salvo com sucesso.', 'success');
 
-  // Redireciona depois de 1s
+  
   setTimeout(() => navigate('/clientes'), 1000);
 
 } catch (err) {
   console.error(err);
-  Swal.close(); // garante fechar o loading se der erro
+  Swal.close(); 
+  
   Swal.fire('Erro', 'Não foi possível salvar o cliente: ' + err.response.data, 'error');
 } finally {
   setLoading(false);
