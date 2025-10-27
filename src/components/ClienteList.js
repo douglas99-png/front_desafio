@@ -35,7 +35,7 @@ const load = async () => {
     setClientes(lista);
 
   } catch (err) {
-    setClientes([]); // evita quebra
+    setClientes([]); 
   } finally {
     setLoading(false);
   }
