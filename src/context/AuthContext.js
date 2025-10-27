@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Criação do contexto
 export const AuthContext = createContext();
 
 
@@ -21,21 +20,18 @@ export const AuthProvider = ({ children }) => {
         setLoading(false); 
   }, []);
 
-  // Função de login
   const login = (userData) => {
     localStorage.setItem("token", userData.token);
     localStorage.setItem("user", JSON.stringify(userData));
     setUser(userData);
   };
 
-  // Função de logout
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setUser(null);
   };
 
-  // Função que verifica permissões
   const has = (permission) => {
     if (!user || !user.authorities) return false;
     return user.authorities.some(
