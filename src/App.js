@@ -6,7 +6,6 @@ import ClienteList from './components/ClienteList';
 import { useAuth } from './context/useAuth';
 import "./styles.css";
 
-// Tela inicial mostrada após o login
 function Home() {
   return (
     <div
@@ -86,18 +85,7 @@ function Layout() {
         </Routes>
       </main>
 
-      <footer>
-        <small>
-          Desenvolvido por <b>Douglas Barros</b> <br />
-          <a
-            href="https://www.linkedin.com/in/douglas99d-barros-a289292b7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </small>
-      </footer>
+  
     </div>
   );
 }
