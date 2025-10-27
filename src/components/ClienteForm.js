@@ -180,7 +180,6 @@ const navigate = useNavigate();
 
     setLoading(true);
 try {
-  // ⚡ Mostra o loading sem travar o fluxo
   Swal.fire({
     title: 'Salvando...',
     text: 'Aguarde enquanto o cliente é salvo.',
@@ -190,10 +189,8 @@ try {
     }
   });
 
-  // envia pro backend
   await api.post('/clientes/inserir', payload);
 
-  // Fecha o loading e mostra sucesso
   Swal.close();
   await Swal.fire('Sucesso!', 'Cliente salvo com sucesso.', 'success');
 
