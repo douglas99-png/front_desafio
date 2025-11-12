@@ -1,4 +1,4 @@
-Projeto React do desafio Sea Tecnologia.  
+Projeto React.  
 
 Para executar o projeto:
 1. Rode `npm install` para instalar as dependências.  
